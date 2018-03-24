@@ -1,7 +1,7 @@
 # __authors__ = Jackie Cohen, Maulishree Pandey
 # An application in Flask where you can log in and create user accounts to save Gif collections
 # SI 364 - W18 - HW4
-
+#Worked with: Will Chatterson
 # TODO 364: Check out the included file giphy_api_key.py and follow the instructions in TODOs there before proceeding to view functions.
 
 # TODO 364: All templates you need are provided and should not be edited. However, you will need to inspect the templates that exist in order to make sure you send them the right data!
@@ -353,7 +353,7 @@ def create_collection():
     # If the form is not validated, this view function should simply render the create_collection.html template and send the form to the template.
     gif_list = []
     if form.validate_on_submit():
-        
+
         for x in range(len(form.gif_picks.data)):
             gif_list.append(get_gif_by_id(form.gif_picks.data[x]))
         get_or_create_collection(form.name.data, current_user,gif_list=gif_list)
